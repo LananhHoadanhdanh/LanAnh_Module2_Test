@@ -1,7 +1,6 @@
 import java.io.*;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class DirectoryManage {
     private static ArrayList<Directory> directoryList;
@@ -11,6 +10,7 @@ public class DirectoryManage {
     }
 
     private static DirectoryManage directoryInstance;
+
     public static DirectoryManage getDirectoryInstance() {
         if (directoryInstance == null) directoryInstance = new DirectoryManage();
         return directoryInstance;
