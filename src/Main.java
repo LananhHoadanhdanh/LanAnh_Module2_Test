@@ -4,8 +4,7 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 public class Main {
-    public static final Scanner SCANNER = new Scanner(System.in);
-    public static DirectoryManage directoryInstance = DirectoryManage.getDirectoryInstance();
+
 
     public static void showMenu() {
         System.out.println("MENU QUẢN LÍ DANH BẠ");
@@ -20,6 +19,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException, ParseException {
+        final Scanner SCANNER = new Scanner(System.in);
+        DirectoryManage directoryInstance = DirectoryManage.getDirectoryInstance();
         try {
             DirectoryManage.readDirectorFromFile();
         } catch (FileNotFoundException | NumberFormatException ignored) {
@@ -48,10 +49,12 @@ public class Main {
                     directoryInstance.delete(phoneNumberDel);
                     break;
                 case 5:
+                    System.out.print("Nhập tên cần tìm: ");
                     String nameFind = SCANNER.nextLine();
                     directoryInstance.getInformationByName(nameFind);
                     break;
                 case 6:
+                    System.out.print("Nhập số cần tìm: ");
                     String numberFind = SCANNER.nextLine();
                     directoryInstance.getInformationByNumber(numberFind);
                     break;

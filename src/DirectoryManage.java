@@ -108,7 +108,7 @@ public class DirectoryManage {
             String gender = array[3];
             String address = array[4];
             String birthday = array[5];
-            String email = array[5];
+            String email = array[6];
             directoryList.add(new Directory(name, phoneNumber, directoryGroup, gender, address, birthday, email));
         }
         bufferedReader.close();
