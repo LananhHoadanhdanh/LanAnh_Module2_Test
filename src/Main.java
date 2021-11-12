@@ -7,15 +7,17 @@ public class Main {
 
 
     public static void showMenu() {
-        System.out.println("MENU QUẢN LÍ DANH BẠ");
-        System.out.println("1. Xem danh sách");
-        System.out.println("2. Thêm mới");
-        System.out.println("3. Cập nhật");
-        System.out.println("4. Xóa");
-        System.out.println("5. Tìm kiếm theo tên");
-        System.out.println("6. Tìm kiếm theo số điện thoại");
-        System.out.println("7. Lưu lại thay đổi");
-        System.out.println("0. Thoát chương trình");
+        System.out.println("🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸");
+        System.out.println("🌸　　　　　 　　⁂⁂⁂ MENU QUẢN LÍ DANH BẠ ⁂⁂⁂　  　　 　　　🌸");
+        System.out.println("🌸             1. Xem danh sách                           🌸");
+        System.out.println("🌸             2. Thêm mới                                🌸");
+        System.out.println("🌸             3. Cập nhật                                🌸");
+        System.out.println("🌸             4. Xóa                                     🌸");
+        System.out.println("🌸             5. Tìm kiếm theo tên                       🌸");
+        System.out.println("🌸             6. Tìm kiếm theo số điện thoại             🌸");
+        System.out.println("🌸             7. Lưu lại thay đổi                        🌸");
+        System.out.println("🌸             0. Thoát chương trình                      🌸");
+        System.out.println("🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸♡🌸");
     }
 
     public static void main(String[] args) throws IOException, ParseException {
