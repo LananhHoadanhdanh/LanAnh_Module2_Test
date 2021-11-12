@@ -1,6 +1,7 @@
 import java.io.*;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DirectoryManage {
     private static ArrayList<Directory> directoryList;
@@ -43,7 +44,7 @@ public class DirectoryManage {
     public void displayDirectoryList() {
         System.out.println();
         System.out.println("_________________________________*** DANH DÁCH TOÀN BỘ DANH BẠ ***_________________________________");
-        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-10s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
+        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-15s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
         for (Directory directory : directoryList) {
             System.out.println(directory);
         }
@@ -54,7 +55,7 @@ public class DirectoryManage {
     public void getInformationByName(String name) {
         System.out.println();
         System.out.println("___________________________________*** DANH DÁCH TÊN PHÙ HỢP ***___________________________________");
-        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-10s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
+        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-15s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
         for (Directory directory : directoryList) {
             if (directory.getName().matches(name+".*")) {
                 System.out.println(directory);
@@ -67,7 +68,7 @@ public class DirectoryManage {
     public void getInformationByNumber(String number) {
         System.out.println();
         System.out.println("___________________________________*** DANH DÁCH TÊN PHÙ HỢP ***___________________________________");
-        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-10s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
+        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-15s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
         for (Directory directory : directoryList) {
             if (directory.getPhoneNumber().matches(number+".*")) {
                 System.out.println(directory);
@@ -76,6 +77,24 @@ public class DirectoryManage {
         System.out.println("___________________________________________________________________________________________________");
         System.out.println();
     }
+
+    public void showDirectoryList() {
+        System.out.println();
+        System.out.println("_________________________________*** DANH DÁCH TOÀN BỘ DANH BẠ ***_________________________________");
+        System.out.printf("%-10s %-15s %-15s %-10s %-10s %-15s %-15s %n", "Tên", "Số điện thoại", "Nhóm danh bạ", "Giới tính", "Địa chỉ", "Ngày sinh", "Email");
+        for (int i = 0; i < directoryList.size(); i++) {
+            Directory directory = directoryInstance.getDirectoryList().get(i);
+            if (i % 5 == 0 && i != 0) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Ấn Enter để xem tiếp");
+                scanner.nextLine();
+            }
+            System.out.println(directory);
+        }
+        System.out.println("___________________________________________________________________________________________________");
+        System.out.println();
+    }
+
 
     public static void writeDirectorToFile() throws IOException, ParseException {
         FileWriter fileWriter = new FileWriter("src/DirectorManageFile.csv");

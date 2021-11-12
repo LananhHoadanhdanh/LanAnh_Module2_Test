@@ -34,7 +34,7 @@ public class Main {
             choice = CreateObject.createChoiceMenu();
             switch (choice) {
                 case 1:
-                    directoryInstance.displayDirectoryList();
+                    directoryInstance.showDirectoryList();
                     break;
                 case 2:
                     directoryInstance.add(CreateObject.createDirectory());
@@ -43,13 +43,30 @@ public class Main {
                 case 3:
                     String phoneNumber = CreateObject.createOldPhoneNumber();
                     directoryInstance.delete(phoneNumber);
-                    directoryInstance.add(CreateObject.createDirectory());
+                    String name = CreateObject.createName();
+                    String directoryGroup = CreateObject.createDirectoryGroup();
+                    String gender = CreateObject.createGender();
+                    String address = CreateObject.createAddress();
+                    String birthday = CreateObject.createBirthday();
+                    String email = CreateObject.createEmail();
+                    directoryInstance.add(new Directory(name, phoneNumber, directoryGroup, gender, address, birthday, email));
                     System.out.println("Đã cập nhật thành công");
                     break;
                 case 4:
                     String phoneNumberDel = CreateObject.createOldPhoneNumber();
-                    directoryInstance.delete(phoneNumberDel);
-                    System.out.println("Đã xóa thành công");
+                    System.out.println("Bạn có chắc chắc muốn xóa?");
+                    System.out.println("1. Xóa");
+                    System.out.println("0. Không xóa");
+                    int choose1 = -1;
+                    while (choose1 != 0) {
+                        choose1 = CreateObject.createChoiceMenu();
+                        if (choose1 == 1) {
+                            directoryInstance.delete(phoneNumberDel);
+                            System.out.println("Đã xóa thành công");
+                            break;
+                        }
+                        System.out.println("Chọn 1 hoặc 0");
+                    }
                     break;
                 case 5:
                     System.out.print("Nhập tên cần tìm: ");
