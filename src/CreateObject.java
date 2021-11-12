@@ -1,8 +1,12 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CreateObject {
     public static final Scanner SCANNER = new Scanner(System.in);
+
+    public static DirectoryManage directoryInstance = DirectoryManage.getDirectoryInstance();
 
     public static int createChoiceMenu() {
         int choice = -1;
@@ -42,12 +46,12 @@ public class CreateObject {
         System.out.print("Nhập số điện thoại: ");
         String phoneNumber = SCANNER.nextLine();
         boolean isValid = Validation.validateString(phoneNumber, Validation.PHONE_NUMBER_REGEX);
-        boolean isExist = (DirectoryManage.getDirectoryInstance().findIndexByNumber(phoneNumber) != -1);
+        boolean isExist = directoryInstance.findIndexByNumber(phoneNumber) != -1;
         while (isExist || !isValid) {
             System.err.println("Số điện thoại đã tồn tại hoặc chưa hợp lệ. Vui lòng nhập lại.");
             phoneNumber = SCANNER.nextLine();
             isValid = Validation.validateString(phoneNumber, Validation.PHONE_NUMBER_REGEX);
-            isExist = (DirectoryManage.getDirectoryInstance().findIndexByNumber(phoneNumber) != -1);
+            isExist = directoryInstance.findIndexByNumber(phoneNumber) != -1;
         }
         return phoneNumber;
     }
@@ -56,12 +60,12 @@ public class CreateObject {
         System.out.print("Nhập số điện thoại: ");
         String phoneNumber = SCANNER.nextLine();
         boolean isValid = Validation.validateString(phoneNumber, Validation.PHONE_NUMBER_REGEX);
-        boolean isExist = (DirectoryManage.getDirectoryInstance().findIndexByNumber(phoneNumber) != -1);
+        boolean isExist = directoryInstance.findIndexByNumber(phoneNumber) != -1;
         while (!isExist || !isValid) {
             System.err.println("Số điện thoại không tồn tại hoặc chưa hợp lệ. Vui lòng nhập lại.");
             phoneNumber = SCANNER.nextLine();
             isValid = Validation.validateString(phoneNumber, Validation.PHONE_NUMBER_REGEX);
-            isExist = (DirectoryManage.getDirectoryInstance().findIndexByNumber(phoneNumber) != -1);
+            isExist = directoryInstance.findIndexByNumber(phoneNumber) != -1;
         }
         return phoneNumber;
     }

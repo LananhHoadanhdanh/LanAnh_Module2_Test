@@ -26,7 +26,7 @@ public class DirectoryManage {
 
     public int findIndexByNumber(String number) {
         for (int i = 0; i < directoryList.size(); i++) {
-            if (directoryList.get(i).getName().equals(number)) {
+            if (directoryList.get(i).getPhoneNumber().equals(number)) {
                 return i;
             }
         } return -1;

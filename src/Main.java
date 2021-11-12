@@ -36,7 +36,7 @@ public class Main {
                     break;
                 case 2:
                     directoryInstance.add(CreateObject.createDirectory());
-                    System.out.println("Đã xóa thành công");
+                    System.out.println("Đã thêm thành công");
                     break;
                 case 3:
                     String phoneNumber = CreateObject.createOldPhoneNumber();
@@ -47,6 +47,7 @@ public class Main {
                 case 4:
                     String phoneNumberDel = CreateObject.createOldPhoneNumber();
                     directoryInstance.delete(phoneNumberDel);
+                    System.out.println("Đã xóa thành công");
                     break;
                 case 5:
                     System.out.print("Nhập tên cần tìm: ");
@@ -71,6 +72,7 @@ public class Main {
                         }
                         System.out.println("Chọn 1 hoặc 0");
                     }
+                    break;
                 case 0:
                     System.exit(0);
             }
